@@ -1,15 +1,17 @@
 #!/bin/bash
 
+cd $HOME/dotfiles
+
 DOT_DIR="$HOME/dotfiles"
+DOT_FILES=(
+  .zshrc
+  .tmux.conf
+)
 
-
-for f in *;
+for f in ${DOT_FILES[@]};
 do
-    [[ "$f" == ".git" ]] && continue
-    [[ "$f" == ".gitignore" ]] && continue
-    [[ "$f" == "README.md" ]] && continue
-    [[ "$f" == "install.sh" ]] && continue
-
-    #ln -snf $DOT_DIR/"$f" $HOME/".$f"
-    echo "$f"
+    ln -si $DOT_DIR/"$f" $HOME/"$f"
+    echo "Installed $f"
 done
+
+cd $HOME
