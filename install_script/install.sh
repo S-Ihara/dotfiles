@@ -4,7 +4,6 @@ cd $HOME/dotfiles
 
 DOT_DIR="$HOME/dotfiles"
 DOT_FILES=(
-  .zshrc
   .tmux.conf
 )
 
@@ -13,5 +12,7 @@ do
     ln -si $DOT_DIR/"$f" $HOME/"$f"
     echo "Installed $f"
 done
+
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 
 cd $HOME
