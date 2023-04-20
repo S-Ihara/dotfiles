@@ -2,7 +2,7 @@
 
 # config files
 cd ~/dotfiles
-ln -si ./fisher.fish $HOME/.config/fish/functions/fisher.fish
+ln -si $HOME/dotfiles/fish_prompt.fish $HOME/.config/fish/functions/fish_prompt.fish
 
 conda init fish
 
